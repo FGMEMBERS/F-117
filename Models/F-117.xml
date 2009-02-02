@@ -1,0 +1,698 @@
+<?xml version="1.0"?>
+<PropertyList>
+ 
+<path>F-117.ac</path>
+<offsets> 
+ <x-m>0</x-m>
+ <y-m>0</y-m>
+ <z-m>-0.1</z-m>
+ <heading-deg>0</heading-deg>
+</offsets>
+
+<!-- BOMS -->
+<!-- LEFT BOM -->
+<model>
+ <name>MK84</name>
+ <path>Aircraft/F-117/Models/MK84.xml</path>
+ <offsets>
+  <x-m> 6.00</x-m>
+  <y-m>-0.45</y-m>
+  <z-m> 0.60</z-m>
+  <pitch-deg>0</pitch-deg>
+ </offsets>
+</model>
+
+<!-- RIGHT BOM -->
+<model>
+ <name>MK84</name>
+ <path>Aircraft/F-117/Models/MK84.xml</path>
+ <offsets>
+  <x-m>6.00</x-m>
+  <y-m>0.45</y-m>
+  <z-m>0.60</z-m>
+  <pitch-deg>0</pitch-deg>
+ </offsets>
+</model>
+
+<animation>
+ <type>select</type>
+ <object-name>MK84</object-name>
+ <condition>
+  <not>
+   <property>/ai/submodels/red-beard-released</property>
+  </not>
+ </condition>
+</animation>
+
+<animation>
+ <type>translate</type>
+ <object-name>MK84</object-name>
+ <property>baydoors/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>
+   <ind>0.4</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>0.8</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>-1</z>
+ </axis>
+</animation>
+
+<model>
+ <name>BrakeChute</name>
+ <path>Aircraft/F-117/Models/Brake-Chute_BB.xml</path>
+ <offsets>
+  <x-m> 1.50</x-m>
+  <y-m> 0.00</y-m>
+  <z-m>-0.25</z-m>
+  <pitch-deg>0</pitch-deg>
+ </offsets>
+</model>
+
+<animation>
+ <type>select</type>
+ <object-name>BrakeChute</object-name>
+ <condition>
+  <equals>
+   <property>sim/model/controls/chute-available</property>
+   <value>1</value>
+  </equals>
+ </condition>
+</animation>
+
+<model>
+ <name>mkgru-7</name>
+ <path>Aircraft/F-117/Models/mkgru-7.xml</path>
+ <offsets>
+  <x-m>-0.02</x-m>
+  <y-m> 0.00</y-m>
+  <z-m> 1.50</z-m>
+  <pitch-deg>0</pitch-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/F-117/Models/pilot.xml</path>
+ <offsets> 
+  <x-m>-0.42</x-m>
+  <y-m> 0.00</y-m>
+  <z-m> 1.55</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh1 Hatch Model</object-name>
+ <property>canopy/position-norm</property>
+ <factor>35</factor>
+ <center>
+  <x-m>0.89</x-m>
+  <y-m>0</y-m>
+  <z-m>2.07</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<!-- BOMBAY DOORS -->
+<!-- LEFT BAY DOOR-->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh7 Group_15_1 Grou_0</object-name>
+ <object-name>Mesh7 Group_15_1 Grou_1</object-name>
+ <property>baydoors/position-norm</property>
+ <interpolation>
+  <entry>			 
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>			 
+   <ind>0.4</ind>
+   <dep>90.0</dep>
+  </entry>
+  <entry>			 
+   <ind>1.0</ind>
+   <dep>90.0</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x1-m> 2.567</x1-m>
+  <y1-m>-0.050</y1-m>
+  <z1-m> 0.143</z1-m>
+  <x2-m> 7.292</x2-m>
+  <y2-m>-0.050</y2-m>
+  <z2-m> 0.192</z2-m>
+ </axis>
+</animation>
+
+<!-- RIGHT BAY DOOR-->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh8 Group_14_1 Grou_0</object-name>
+ <object-name>Mesh8 Group_14_1 Grou_1</object-name>
+ <property>baydoors/position-norm</property>
+ <interpolation>
+  <entry>			 
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>			 
+   <ind>0.4</ind>
+   <dep>-90.0</dep>
+  </entry>
+  <entry>			 
+   <ind>1.0</ind>
+   <dep>-90.0</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x1-m> 2.567</x1-m>
+  <y1-m> 0.050</y1-m>
+  <z1-m> 0.143</z1-m>
+  <x2-m> 7.292</x2-m>
+  <y2-m> 0.050</y2-m>
+  <z2-m> 0.192</z2-m>
+ </axis>
+</animation>
+
+<!-- RUDDER -->
+<!-- LEFT RUDDER-->
+<!--
+<animation>
+<type>rotate</type>
+<object-name>Mesh7 Group_15_1 Grou_0</object-name>
+<object-name>Mesh7 Group_15_1 Grou_1</object-name>
+<property>surface-positions/rudder-pos-norm</property>
+<factor>30</factor>
+<axis>
+<x1-m>12.12</x1-m>
+<y1-m>0.57</y1-m>
+<z1-m>1.13</z1-m> 
+<x2-m>15.161</x2-m>
+<y2-m>1.74</y2-m>
+<z2-m>2.61</z2-m>
+</axis>
+</animation>
+-->
+
+<!-- RIGHT RUDDER -->
+<!--
+<animation>
+<type>rotate</type>
+<object-name>Mesh12 Group_2_2 .002</object-name>
+<property>surface-positions/rudder-pos-norm</property>
+<factor>30</factor>
+<axis>
+<x1-m>12.12</x1-m>
+<y1-m>-0.57</y1-m>
+<z1-m>1.13</z1-m> 
+<x2-m>15.161</x2-m>
+<y2-m>-1.74</y2-m>
+<z2-m>2.61</z2-m>
+</axis>
+</animation>
+-->
+
+<!-- GEAR -->
+<!-- NOSE GEAR -->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh22 Group_9_1 Mode</object-name>
+ <object-name>Mesh23 Group_11_1 Mod</object-name>
+ <property>gear/gear[0]/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>100.0</dep>
+  </entry>
+  <entry>
+   <ind>0.2</ind>
+   <dep>100.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <center>
+  <x-m>0.356</x-m>
+  <y-m>0.0</y-m>
+  <z-m>0.344</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh22 Group_9_1 Mode</object-name>
+ <object-name>Mesh23 Group_11_1 Mod</object-name>
+ <property>gear/gear/steering-norm</property>
+ <factor>50</factor>
+ <center>
+  <x-m>0.312</x-m>
+  <y-m>0</y-m>
+  <z-m>-1.364</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>-1</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>translate</type>
+ <object-name>Mesh22 Group_9_1 Mode</object-name>
+ <object-name>Mesh23 Group_11_1 Mod</object-name>
+ <property>gear/gear[0]/compression-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>	
+   <dep>0</dep>
+  </entry>
+  <entry>	
+   <ind>1.00</ind>
+   <dep>0.25</dep>	
+  </entry>
+ </interpolation>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>spin</type>
+ <object-name>Mesh22 Group_9_1 Mode</object-name>
+ <property>fdm/jsbsim/gear/unit/wheel-speed-fps</property>
+ <factor>-23</factor>
+ <center>
+  <x-m>0.333</x-m>
+  <y-m>0</y-m>
+  <z-m>-1.339</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>1.0</y>
+  <z>0.0</z>
+ </axis>
+</animation>
+
+<!-- DOOR -->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh6 Group_7_1 Group_0</object-name>
+ <object-name>Mesh6 Group_7_1 Group_1</object-name>
+ <property>gear/gear[0]/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>
+   <ind>0.2</ind>
+   <dep>-90.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>-90.0</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x1-m>-1.372</x1-m>
+  <y1-m>-0.280</y1-m>
+  <z1-m> 0.230</z1-m>
+  <x2-m> 0.494</x2-m>
+  <y2-m>-0.293</y2-m>
+  <z2-m> 0.130</z2-m>
+ </axis>
+</animation>
+
+<!-- REAR GEAR -->
+<!-- RIGHT -->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh24 Component_1_2 </object-name>
+ <object-name>Mesh25 Component_2_2 </object-name>
+ <property>gear/gear[2]/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>100.0</dep>
+  </entry>
+  <entry>
+   <ind>0.2</ind>
+   <dep>100.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <center>
+  <x-m>6.301</x-m>
+  <y-m>1.900</y-m>
+  <z-m>0.374</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation>
+ 
+<animation>
+ <type>select</type>
+ <object-name>Mesh24 Component_1_2 </object-name>
+ <object-name>Mesh25 Component_2_2 </object-name>
+ <condition>
+  <greater-than>
+   <property>gear/gear[2]/position-norm</property>
+   <value>0</value>
+  </greater-than>	 
+ </condition>
+</animation>
+
+<!--
+<animation>
+<type>spin</type>
+<object-name>Mesh14 Component_.002</object-name>
+<object-name>Mesh14 Component_.003</object-name>
+<object-name>Mesh14 Component_.004</object-name>
+<object-name>Mesh14 Component_.005</object-name>
+<property>fdm/jsbsim/gear/unit[2]/wheel-speed-fps</property>
+<factor>-23</factor>
+<center>
+   <x-m> 6.176</x-m>
+   <y-m> 0.000</y-m>
+   <z-m>-1.131</z-m>
+  </center>
+<axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+</animation>
+-->
+
+<animation>
+ <type>translate</type>
+ <object-name>Mesh24 Component_1_2 </object-name>
+ <object-name>Mesh25 Component_2_2 </object-name>
+ <property>gear/gear[2]/compression-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>	
+   <dep>0</dep>
+  </entry>
+  <entry>	
+   <ind>1.00</ind>
+   <dep>0.25</dep>	
+  </entry>
+ </interpolation>
+ <axis>
+  <x>0</x>	
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+
+<!-- DOOR -->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh12 Group_13_2 Gro</object-name>
+ <property>gear/gear[2]/position-norm</property>
+ <interpolation>
+  <entry>			 
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>100.0</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x1-m>6.703</x1-m>
+  <y1-m>2.179</y1-m>
+  <z1-m>0.217</z1-m>
+  <x2-m>6.703</x2-m>
+  <y2-m>1.879</y2-m>
+  <z2-m>0.212</z2-m>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh11 Group_18_2 Gro</object-name>
+ <property>gear/gear[2]/position-norm</property>
+ <interpolation>
+  <entry>			 
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>			 
+   <ind>0.2</ind>
+   <dep>-90.0</dep>
+  </entry>
+  <entry>
+   <ind>0.8</ind>
+   <dep>-90.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x1-m>4.173</x1-m>
+  <y1-m>1.654</y1-m>
+  <z1-m>0.187</z1-m>
+  <x2-m>5.278</x2-m>
+  <y2-m>1.654</y2-m>
+  <z2-m>0.195</z2-m>
+ </axis>
+</animation>
+
+<!-- REAR GEAR -->
+<!-- LEFT-->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh20 Component_1_1 </object-name>
+ <object-name>Mesh21 Component_2_1 </object-name>
+ <property>gear/gear[1]/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>100.0</dep>
+  </entry>
+  <entry>
+   <ind>0.2</ind>
+   <dep>100.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <center>
+  <x-m> 6.301</x-m>
+  <y-m>-1.900</y-m>
+  <z-m> 0.374</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation> 
+
+<animation>
+ <type>select</type>
+ <object-name>Mesh20 Component_1_1 </object-name>
+ <object-name>Mesh21 Component_2_1 </object-name>
+ <condition>
+  <greater-than>
+   <property>gear/gear[1]/position-norm</property>
+   <value>0</value>
+  </greater-than>	 
+ </condition>
+</animation>
+
+<!--
+<animation>
+ <type>spin</type>
+ <object-name>Mesh16 Component_</object-name>
+ <object-name>Mesh16 Component_.001</object-name>
+ <object-name>Mesh16 Component_.002</object-name>	
+ <object-name>Mesh16 Component_1_2 </object-name>
+ <property>fdm/jsbsim/gear/unit[1]/wheel-speed-fps</property>
+ <factor>-23</factor>
+ <axis>
+  <x1-m> 6.176</x1-m>
+  <y1-m>-2.085</y1-m>
+  <z1-m>-1.131</z1-m>
+  <x2-m> 6.176</x2-m>
+  <y2-m>-1.962</y2-m>
+  <z2-m>-1.131</z2-m>
+ </axis>
+</animation>
+-->
+
+<animation>
+ <type>translate</type>
+ <object-name>Mesh20 Component_1_1 </object-name>
+ <object-name>Mesh21 Component_2_1 </object-name>
+ <property>gear/gear[1]/compression-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>	
+   <dep>0</dep>
+  </entry>
+  <entry>	
+   <ind>1.00</ind>
+   <dep>0.25</dep>	
+  </entry>
+ </interpolation>
+ <axis>
+  <x>0</x>	
+  <y>0</y>
+  <z>1</z>	
+ </axis>
+</animation>
+
+<!-- DOOR -->
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh9 Group_13_1 Grou_0</object-name>
+ <object-name>Mesh9 Group_13_1 Grou_1</object-name>
+ <property>gear/gear[1]/position-norm</property>
+ <interpolation>
+  <entry>			 
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>-100.0</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x1-m>6.703</x1-m>
+  <y1-m>-2.179</y1-m>
+  <z1-m>0.217</z1-m>
+  <x2-m>6.703</x2-m>
+  <y2-m>-1.879</y2-m>
+  <z2-m>0.212</z2-m>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>Mesh10 Group_18_1 Gro</object-name>
+ <property>gear/gear[1]/position-norm</property>
+ <interpolation>
+  <entry>			 
+   <ind>0.0</ind>
+   <dep>0.0</dep>
+  </entry>
+  <entry>			 
+   <ind>0.2</ind>
+   <dep>90.0</dep>
+  </entry>
+  <entry>
+   <ind>0.8</ind>
+   <dep>90.0</dep>
+  </entry>
+  <entry>
+   <ind>1.0</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x1-m> 4.173</x1-m>
+  <y1-m>-1.654</y1-m>
+  <z1-m> 0.187</z1-m>
+  <x2-m> 5.278</x2-m>
+  <y2-m>-1.654</y2-m>
+  <z2-m> 0.195</z2-m>
+ </axis>
+</animation>
+ 
+<!-- LIGHTING -->
+<!-- LANDING -->
+<model>
+ <name>nosewheel_light</name>
+ <path>Aircraft/F-117/Models/lights/LandingLight.xml</path>
+ <offsets> 
+  <x-m>0.22</x-m>
+  <y-m>0</y-m>
+  <z-m>-0.5</z-m>
+ </offsets>
+</model>
+
+<animation>
+ <type>rotate</type>
+ <object-name>nosewheel_light</object-name>
+ <property>gear/gear/steering-norm</property>
+ <factor>-50</factor>
+ <center>
+  <x-m>0.22</x-m>
+  <y-m>0</y-m>
+  <z-m>-0.5</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+
+<model>
+ <path>Aircraft/F-117/Models/lights/LandingLight.xml</path>>
+ <offsets> 
+  <x-m>6.146</x-m>
+  <y-m>-1.772</y-m>
+  <z-m>-0.35</z-m>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/F-117/Models/lights/LandingLight.xml</path>>
+ <offsets> 
+  <x-m>6.146</x-m>
+  <y-m>1.772</y-m>
+  <z-m>-0.35</z-m>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/F-117/Models/lights/BeaconLight.xml</path>
+ <offsets> 
+  <x-m> 1.00</x-m>
+  <y-m> 0.75</y-m>
+  <z-m> 0.10</z-m>
+ </offsets>
+</model>
+
+</PropertyList>

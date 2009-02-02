@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <sim>
+
+  <description>F-117 Nighthawk</description>
+  <author>Gijs de Rooy</author>
+  <status>alpha</status>
+  <flight-model>jsb</flight-model>
+  <aero>F-117</aero>
+  <fuel-fraction>0.50</fuel-fraction>
+  <startup>    
+   <splash-texture>Aircraft/F-117/F-117-splash.rgb</splash-texture>
+  </startup>
+
+  <model>
+   <path>Aircraft/F-117/Models/F-117.xml</path>
+   <offsets> 
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+   </offsets>
+   <controls>
+    <chute>1</chute>
+   </controls>
+  </model>
+
+  <submodels>
+   <serviceable type="bool">1</serviceable>
+   <path>Aircraft/F-117/F-117-submodels.xml</path>
+  </submodels>
+
+  <hud>   
+   <enable3d>false</enable3d>
+  </hud>
+
+  <view>
+   <internal archive="y">true</internal>
+    <config>
+     <x-offset-m archive="y">0.0</x-offset-m>
+     <y-offset-m archive="y">1.9</y-offset-m>
+     <z-offset-m archive="y">0.2</z-offset-m>
+     <pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
+    </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+  
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+
+  <help>
+   <title>F-117 Nighthawk</title>
+   <key>
+    <name>C</name>
+    <desc>Open/close canopy</desc>
+   </key>
+
+   <key>
+    <name>Ctrl-b</name>
+    <desc>Prepare braking chute deployement, open the doors</desc>
+   </key>
+
+   <key>
+    <name>Ctrl-d</name>
+    <desc>Open the bombay doors</desc>
+   </key>
+
+   <key>
+    <name>j</name>
+    <desc>Reload braking chute, and close the doors</desc>
+   </key>
+
+   <key>
+    <name>J</name>
+    <desc>Release the bombs</desc>
+   </key>
+
+   <text>
+====Braking Chute==========
+The braking chute will be automaticly deployed, when the following conditions are all true:
+- Brake chute doors are openeded (Ctrl-b)
+- Nosewheel on runway
+- Throttle position less than 0.2
+
+The braking chute will be untied when one of the following conditions is true:
+- Airspeed less than 30 kts
+- Throttle position greater than 0.2
+
+REMEMBER: the chute can be used only once. If you want it again you must reload it(j).
+   </text>
+  </help>
+
+  <multiplay>
+   <generic>
+    <float n="0" alias="/sim/current-view/heading-offset-deg"/> 
+    <float n="1" alias="/sim/current-view/pitch-offset-deg"/> 
+    <float n="2" alias="/canopy/position-norm"/> 
+   </generic>
+  </multiplay>
+
+  <menubar>
+   <default>
+    <menu n="10">
+     <label>F-117</label>
+     <enabled type="bool">true</enabled>
+     <item>
+      <label>Autostart</label>
+     </item>
+    </menu>
+   </default>
+  </menubar>
+ 
+  <systems>
+   <autopilot>
+    <path>Aircraft/F-117/F-117-autopilot.xml</path>
+   </autopilot>
+  </systems>
+
+ </sim>
+
+ <engines>
+  <engine n="0">
+   <running>true</running>
+   <rpm>1000</rpm>
+  </engine>
+
+  <engine n="1">
+   <running>true</running>
+   <rpm>1000</rpm>
+  </engine>
+ </engines>
+
+ <controls>
+  <gear>
+   <brake-parking>1</brake-parking>
+  </gear>
+  <lighting>
+   <beacon>1</beacon>
+  </lighting>
+ </controls>
+
+ <canopy>
+  <position-norm>1</position-norm>
+ </canopy>
+
+ <input>
+  <keyboard>
+   <key n="2">
+    <name>Ctrl-b</name>
+    <desc>Braking Chute Deploy</desc>
+    <binding>
+     <property>sim/model/controls/chute</property>
+     <command>property-assign</command>
+     <value>1</value>
+    </binding>
+   </key>
+
+      <key n="74">
+        <name>J</name>
+        <desc>Release Red Beard</desc>
+        <binding n="0">
+          <command>property-assign</command>
+          <property>/ai/submodels/red-beard-released</property>
+          <value type="bool">true</value>
+        </binding>
+      </key>
+
+   <key n="83">
+    <name>S</name>
+    <desc>Turn landing light on.</desc>
+    <binding>
+     <command>property-assign</command>
+     <property>controls/lighting/landing-lights</property>
+     <value type="bool">true</value>
+    </binding>     
+   </key>
+
+   <key n="67">
+    <name>C</name>
+    <desc>Open/close canopy</desc>
+    <binding>
+     <command>nasal</command>
+     <script>canopy.canopy_switch(2)</script>
+    </binding>
+   </key>
+
+   <key n="4">
+    <name>Ctrl-d</name>
+    <desc>Open/close baydoors</desc>
+    <binding>
+     <command>nasal</command>
+     <script>baydoors.baydoors_switch(2)</script>
+    </binding>
+   </key>
+
+   <key n="106">
+    <name>j</name>
+    <desc>Braking Chute Reload</desc>
+    <binding>
+     <property>sim/model/controls/chute</property>
+     <command>property-assign</command>
+     <value>0</value>
+    </binding>
+    <binding>
+     <property>/fdm/jsbsim/fcs/chute-switch-once</property>
+     <command>property-assign</command>
+     <value>0</value>
+    </binding>
+    <binding>
+     <property>/fdm/jsbsim/fcs/chute-switch-count</property>
+     <command>property-assign</command>
+     <value>0</value>
+    </binding>
+   </key>
+
+  </keyboard>
+ </input>
+
+ <limits>
+  <vne>600</vne>
+  <max-positive-g>6</max-positive-g>
+ </limits>
+
+ <nasal>
+  <canopy>
+   <file>Aircraft/F-117/Nasal/canopy.nas</file>
+  </canopy>
+  <baydoors>
+   <file>Aircraft/F-117/Nasal/baydoors.nas</file>
+  </baydoors>
+  <F-117>
+   <file>Aircraft/F-117/Nasal/lighting.nas</file>
+   <file>Aircraft/Generic/limits.nas</file>
+   <file>Aircraft/F-117/Nasal/weapons.nas</file>
+  </F-117>
+  <aar> 
+   <file>Aircraft/F-117/Nasal/aar.nas</file>
+  </aar>
+ </nasal>
+
+</PropertyList>
