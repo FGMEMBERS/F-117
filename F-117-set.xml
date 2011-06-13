@@ -5,9 +5,17 @@
   <description>F-117 Nighthawk</description>
   <author>Gijs de Rooy</author>
   <status>alpha</status>
+  <rating>
+   <FDM type="int">2</FDM>
+   <systems type="int">2</systems>
+   <cockpit type="int">1</cockpit>
+   <model type="int">3</model>
+  </rating>
+  
   <flight-model>jsb</flight-model>
   <aero>F-117</aero>
   <fuel-fraction>0.50</fuel-fraction>
+  
   <startup>    
    <splash-texture>Aircraft/F-117/F-117-splash.rgb</splash-texture>
   </startup>
