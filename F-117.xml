@@ -238,8 +238,8 @@
 
  </propulsion>
 
-<system file="brake-chute"/>
 <system file="armament"/>
+<system file="brake-chute"/>
 
  <flight_control name="FCS: F-117">
 
@@ -579,15 +579,15 @@
          </product>
     </function>
 
-            <function name="aero/coefficient/CDsb">
-                <description>Drag_due_to_Chute</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>fcs/brake-chute-selector</property>
-                    <value>0.4</value>
-                </product>
-            </function>
+    <function name="aero/coefficient/CDsb">
+        <description>Drag_due_to_Chute</description>
+        <product>
+            <property>aero/qbar-psf</property>
+            <property>metrics/Sw-sqft</property>
+            <property>fcs/brake-chute-selector</property>
+            <value>0.4</value>
+        </product>
+    </function>
 
     <function name="aero/coefficient/CDbeta">
        <description>Drag_due_to_sideslip</description>

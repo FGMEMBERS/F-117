@@ -3,17 +3,23 @@
  
 <path>F-117.ac</path>
 <offsets> 
- <x-m>0</x-m>
- <y-m>0</y-m>
  <z-m>-0.1</z-m>
- <heading-deg>0</heading-deg>
 </offsets>
+
+<effect>
+ <inherits-from>Effects/model-transparent</inherits-from>
+ <object-name>CanopyGlass</object-name>
+</effect>
+
+<model>
+ <path>Aircraft/F-117/Models/external-lights.xml</path>
+</model>
 
 <!-- BOMS -->
 <!-- LEFT BOM -->
 <model>
  <name>MK84</name>
- <path>Aircraft/F-117/Models/MK84.xml</path>
+ <path>Aircraft/F-117/Models/Stores/MK84.xml</path>
  <offsets>
   <x-m> 6.00</x-m>
   <y-m>-0.45</y-m>
@@ -25,7 +31,7 @@
 <!-- RIGHT BOM -->
 <model>
  <name>MK84</name>
- <path>Aircraft/F-117/Models/MK84.xml</path>
+ <path>Aircraft/F-117/Models/Stores/MK84.xml</path>
  <offsets>
   <x-m>6.00</x-m>
   <y-m>0.45</y-m>
@@ -47,7 +53,7 @@
 <animation>
  <type>translate</type>
  <object-name>MK84</object-name>
- <property>baydoors/position-norm</property>
+ <property>controls/baydoors/position-norm</property>
  <interpolation>
   <entry>
    <ind>0.0</ind>
@@ -71,7 +77,7 @@
 
 <model>
  <name>BrakeChute</name>
- <path>Aircraft/F-117/Models/Brake-Chute_BB.xml</path>
+ <path>Aircraft/F-117/Models/brake-chute.xml</path>
  <offsets>
   <x-m> 1.50</x-m>
   <y-m> 0.00</y-m>
@@ -92,8 +98,7 @@
 </animation>
 
 <model>
- <name>mkgru-7</name>
- <path>Aircraft/F-117/Models/mkgru-7.xml</path>
+ <path>Aircraft/F-117/Models/mkgru7.xml</path>
  <offsets>
   <x-m>-0.02</x-m>
   <y-m> 0.00</y-m>
@@ -114,8 +119,9 @@
 
 <animation>
  <type>rotate</type>
- <object-name>Mesh1 Hatch Model</object-name>
- <property>canopy/position-norm</property>
+ <object-name>Canopy</object-name>
+ <object-name>CanopyGlass</object-name>
+ <property>controls/canopy/position-norm</property>
  <factor>35</factor>
  <center>
   <x-m>0.89</x-m>
@@ -133,9 +139,8 @@
 <!-- LEFT BAY DOOR-->
 <animation>
  <type>rotate</type>
- <object-name>Mesh7 Group_15_1 Grou_0</object-name>
- <object-name>Mesh7 Group_15_1 Grou_1</object-name>
- <property>baydoors/position-norm</property>
+ <object-name>LeftBaydoor</object-name>
+ <property>controls/baydoors/position-norm</property>
  <interpolation>
   <entry>			 
    <ind>0.0</ind>
@@ -163,9 +168,8 @@
 <!-- RIGHT BAY DOOR-->
 <animation>
  <type>rotate</type>
- <object-name>Mesh8 Group_14_1 Grou_0</object-name>
- <object-name>Mesh8 Group_14_1 Grou_1</object-name>
- <property>baydoors/position-norm</property>
+ <object-name>RightBaydoor</object-name>
+ <property>controls/baydoors/position-norm</property>
  <interpolation>
   <entry>			 
    <ind>0.0</ind>
@@ -192,11 +196,9 @@
 
 <!-- RUDDER -->
 <!-- LEFT RUDDER-->
-<!--
 <animation>
 <type>rotate</type>
-<object-name>Mesh7 Group_15_1 Grou_0</object-name>
-<object-name>Mesh7 Group_15_1 Grou_1</object-name>
+<object-name>LeftRudder</object-name>
 <property>surface-positions/rudder-pos-norm</property>
 <factor>30</factor>
 <axis>
@@ -208,13 +210,11 @@
 <z2-m>2.61</z2-m>
 </axis>
 </animation>
--->
 
 <!-- RIGHT RUDDER -->
-<!--
 <animation>
 <type>rotate</type>
-<object-name>Mesh12 Group_2_2 .002</object-name>
+<object-name>RightRudder</object-name>
 <property>surface-positions/rudder-pos-norm</property>
 <factor>30</factor>
 <axis>
@@ -226,14 +226,13 @@
 <z2-m>2.61</z2-m>
 </axis>
 </animation>
--->
 
 <!-- GEAR -->
 <!-- NOSE GEAR -->
 <animation>
  <type>rotate</type>
- <object-name>Mesh22 Group_9_1 Mode</object-name>
- <object-name>Mesh23 Group_11_1 Mod</object-name>
+ <object-name>NoseWheel</object-name>
+ <object-name>NoseWheelStrut</object-name>
  <property>gear/gear[0]/position-norm</property>
  <interpolation>
   <entry>
@@ -263,8 +262,8 @@
 
 <animation>
  <type>rotate</type>
- <object-name>Mesh22 Group_9_1 Mode</object-name>
- <object-name>Mesh23 Group_11_1 Mod</object-name>
+ <object-name>NoseWheel</object-name>
+ <object-name>NoseWheelStrut</object-name>
  <property>gear/gear/steering-norm</property>
  <factor>50</factor>
  <center>
@@ -281,8 +280,8 @@
 
 <animation>
  <type>translate</type>
- <object-name>Mesh22 Group_9_1 Mode</object-name>
- <object-name>Mesh23 Group_11_1 Mod</object-name>
+ <object-name>NoseWheel</object-name>
+ <object-name>NoseWheelStrut</object-name>
  <property>gear/gear[0]/compression-norm</property>
  <interpolation>
   <entry>
@@ -303,7 +302,7 @@
 
 <animation>
  <type>spin</type>
- <object-name>Mesh22 Group_9_1 Mode</object-name>
+ <object-name>NoseWheel</object-name>
  <property>fdm/jsbsim/gear/unit/wheel-speed-fps</property>
  <factor>-23</factor>
  <center>
@@ -321,8 +320,7 @@
 <!-- DOOR -->
 <animation>
  <type>rotate</type>
- <object-name>Mesh6 Group_7_1 Group_0</object-name>
- <object-name>Mesh6 Group_7_1 Group_1</object-name>
+ <object-name>NoseWheelDoor</object-name>
  <property>gear/gear[0]/position-norm</property>
  <interpolation>
   <entry>
@@ -352,8 +350,8 @@
 <!-- RIGHT -->
 <animation>
  <type>rotate</type>
- <object-name>Mesh24 Component_1_2 </object-name>
- <object-name>Mesh25 Component_2_2 </object-name>
+ <object-name>RightWheel</object-name>
+ <object-name>RightWheelStrut</object-name>
  <property>gear/gear[2]/position-norm</property>
  <interpolation>
   <entry>
@@ -383,8 +381,8 @@
  
 <animation>
  <type>select</type>
- <object-name>Mesh24 Component_1_2 </object-name>
- <object-name>Mesh25 Component_2_2 </object-name>
+ <object-name>RightWheel</object-name>
+ <object-name>RightWheelStrut</object-name>
  <condition>
   <greater-than>
    <property>gear/gear[2]/position-norm</property>
@@ -393,32 +391,27 @@
  </condition>
 </animation>
 
-<!--
 <animation>
-<type>spin</type>
-<object-name>Mesh14 Component_.002</object-name>
-<object-name>Mesh14 Component_.003</object-name>
-<object-name>Mesh14 Component_.004</object-name>
-<object-name>Mesh14 Component_.005</object-name>
-<property>fdm/jsbsim/gear/unit[2]/wheel-speed-fps</property>
-<factor>-23</factor>
-<center>
-   <x-m> 6.176</x-m>
-   <y-m> 0.000</y-m>
-   <z-m>-1.131</z-m>
-  </center>
-<axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
+ <type>spin</type>
+ <object-name>RightWheel</object-name>
+ <property>fdm/jsbsim/gear/unit[2]/wheel-speed-fps</property>
+ <factor>-23</factor>
+ <center>
+  <x-m> 6.176</x-m>
+  <y-m> 0.000</y-m>
+  <z-m>-1.131</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>1.0</y>
+  <z>0.0</z>
+ </axis>
 </animation>
--->
 
 <animation>
  <type>translate</type>
- <object-name>Mesh24 Component_1_2 </object-name>
- <object-name>Mesh25 Component_2_2 </object-name>
+ <object-name>RightWheel</object-name>
+ <object-name>RightWheelStrut</object-name>
  <property>gear/gear[2]/compression-norm</property>
  <interpolation>
   <entry>
@@ -440,7 +433,7 @@
 <!-- DOOR -->
 <animation>
  <type>rotate</type>
- <object-name>Mesh12 Group_13_2 Gro</object-name>
+ <object-name>RightWheelDoorSmall</object-name>
  <property>gear/gear[2]/position-norm</property>
  <interpolation>
   <entry>			 
@@ -464,7 +457,7 @@
 
 <animation>
  <type>rotate</type>
- <object-name>Mesh11 Group_18_2 Gro</object-name>
+ <object-name>RightWheelDoorBig</object-name>
  <property>gear/gear[2]/position-norm</property>
  <interpolation>
   <entry>			 
@@ -498,8 +491,8 @@
 <!-- LEFT-->
 <animation>
  <type>rotate</type>
- <object-name>Mesh20 Component_1_1 </object-name>
- <object-name>Mesh21 Component_2_1 </object-name>
+ <object-name>LeftWheel</object-name>
+ <object-name>LeftWheelStrut</object-name>
  <property>gear/gear[1]/position-norm</property>
  <interpolation>
   <entry>
@@ -529,8 +522,8 @@
 
 <animation>
  <type>select</type>
- <object-name>Mesh20 Component_1_1 </object-name>
- <object-name>Mesh21 Component_2_1 </object-name>
+ <object-name>LeftWheel</object-name>
+ <object-name>LeftWheelStrut</object-name>
  <condition>
   <greater-than>
    <property>gear/gear[1]/position-norm</property>
@@ -539,13 +532,9 @@
  </condition>
 </animation>
 
-<!--
 <animation>
  <type>spin</type>
- <object-name>Mesh16 Component_</object-name>
- <object-name>Mesh16 Component_.001</object-name>
- <object-name>Mesh16 Component_.002</object-name>	
- <object-name>Mesh16 Component_1_2 </object-name>
+ <object-name>LeftWheel</object-name>
  <property>fdm/jsbsim/gear/unit[1]/wheel-speed-fps</property>
  <factor>-23</factor>
  <axis>
@@ -557,12 +546,11 @@
   <z2-m>-1.131</z2-m>
  </axis>
 </animation>
--->
 
 <animation>
  <type>translate</type>
- <object-name>Mesh20 Component_1_1 </object-name>
- <object-name>Mesh21 Component_2_1 </object-name>
+ <object-name>LeftWheel</object-name>
+ <object-name>LeftWheelStrut</object-name>
  <property>gear/gear[1]/compression-norm</property>
  <interpolation>
   <entry>
@@ -584,8 +572,7 @@
 <!-- DOOR -->
 <animation>
  <type>rotate</type>
- <object-name>Mesh9 Group_13_1 Grou_0</object-name>
- <object-name>Mesh9 Group_13_1 Grou_1</object-name>
+ <object-name>LeftWheelDoorSmall</object-name>
  <property>gear/gear[1]/position-norm</property>
  <interpolation>
   <entry>			 
@@ -609,7 +596,7 @@
 
 <animation>
  <type>rotate</type>
- <object-name>Mesh10 Group_18_1 Gro</object-name>
+ <object-name>LeftWheelDoorBig</object-name>
  <property>gear/gear[1]/position-norm</property>
  <interpolation>
   <entry>			 
@@ -638,61 +625,5 @@
   <z2-m> 0.195</z2-m>
  </axis>
 </animation>
- 
-<!-- LIGHTING -->
-<!-- LANDING -->
-<model>
- <name>nosewheel_light</name>
- <path>Aircraft/F-117/Models/lights/LandingLight.xml</path>
- <offsets> 
-  <x-m>0.22</x-m>
-  <y-m>0</y-m>
-  <z-m>-0.5</z-m>
- </offsets>
-</model>
-
-<animation>
- <type>rotate</type>
- <object-name>nosewheel_light</object-name>
- <property>gear/gear/steering-norm</property>
- <factor>-50</factor>
- <center>
-  <x-m>0.22</x-m>
-  <y-m>0</y-m>
-  <z-m>-0.5</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>0</y>
-  <z>1</z>
- </axis>
-</animation>
-
-<model>
- <path>Aircraft/F-117/Models/lights/LandingLight.xml</path>>
- <offsets> 
-  <x-m>6.146</x-m>
-  <y-m>-1.772</y-m>
-  <z-m>-0.35</z-m>
- </offsets>
-</model>
-
-<model>
- <path>Aircraft/F-117/Models/lights/LandingLight.xml</path>>
- <offsets> 
-  <x-m>6.146</x-m>
-  <y-m>1.772</y-m>
-  <z-m>-0.35</z-m>
- </offsets>
-</model>
-
-<model>
- <path>Aircraft/F-117/Models/lights/BeaconLight.xml</path>
- <offsets> 
-  <x-m> 1.00</x-m>
-  <y-m> 0.75</y-m>
-  <z-m> 0.10</z-m>
- </offsets>
-</model>
 
 </PropertyList>

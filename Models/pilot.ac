@@ -24,7 +24,7 @@ kids 21
 OBJECT poly
 name "patche"
 loc 0.189309 0.012906 0.277831
-texture "patche.rgb"
+texture "patche.png"
 crease 45.000000
 numvert 19
 0.00146925 0.0500962 0
@@ -5792,7 +5792,7 @@ kids 0
 OBJECT poly
 name "L-oxy-tube"
 loc 0.00864221 -0.126226 0.0846685
-texture "white-black-gradient-stripes.rgb"
+texture "white-black-gradient-stripes.png"
 crease 117.000000
 numvert 135
 0.102578 -0.335386 0.160496
