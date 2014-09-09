@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <submodel>
+    <name>redbeard1</name>
+    <model>Aircraft/F-117/Models/Stores/MK84.xml</model>
+    <trigger>ai/submodels/red-beard-released</trigger>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <count>1</count>
+    <x-offset>-19.7</x-offset>
+    <y-offset>  1.5</y-offset>
+    <z-offset> -0.7</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>3.00</eda>
+    <cd>0.1</cd> <!-- less than a bullet but more than a tank -->
+    <weight>2039</weight>
+    <contents>yasim/weights/red-beard-lbs</contents>
+    <life>600</life>
+    <buoyancy>0</buoyancy>
+    <wind>false</wind>
+    <aero-stabilised>true</aero-stabilised>
+    <impact>true</impact>
+    <impact-reports>/sim/armament/weapons/impact</impact-reports>
+  </submodel>
+
+  <submodel>
+    <name>redbeard2</name>
+    <model>Aircraft/F-117/Models/Stores/MK84.xml</model>
+    <trigger>ai/submodels/red-beard-released</trigger>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <count>1</count>
+    <x-offset>-19.7</x-offset>
+    <y-offset> -1.5</y-offset>
+    <z-offset> -0.7</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>3.00</eda>
+    <cd>0.1</cd> <!-- less than a bullet but more than a tank -->
+    <weight>2039</weight>
+    <contents>yasim/weights/red-beard-lbs</contents>
+    <life>600</life>
+    <buoyancy>0</buoyancy>
+    <wind>false</wind>
+    <aero-stabilised>true</aero-stabilised>
+    <impact>true</impact>
+    <impact-reports>/sim/armament/weapons/impact</impact-reports>
+  </submodel>
+
+</PropertyList>
