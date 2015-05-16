@@ -2,27 +2,24 @@
 <PropertyList>
  <sim>
 
-  <description>Lockheed F-117 Nighthawk</description>
+  <description>F-117 Nighthawk</description>
   <author>Gijs de Rooy</author>
-  <version>20130317</version>
   <status>alpha</status>
-  <rating>
-   <FDM type="int">2</FDM>
-   <systems type="int">1</systems>
-   <cockpit type="int">1</cockpit>
-   <model type="int">2</model>
-  </rating>
-  
   <flight-model>jsb</flight-model>
   <aero>F-117</aero>
   <fuel-fraction>0.50</fuel-fraction>
-  
   <startup>    
-   <splash-texture>Aircraft/F-117/F-117-splash.png</splash-texture>
+   <splash-texture>Aircraft/F-117/F-117-splash.rgb</splash-texture>
   </startup>
 
   <model>
    <path>Aircraft/F-117/Models/F-117.xml</path>
+   <offsets> 
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+   </offsets>
    <controls>
     <chute>1</chute>
    </controls>
@@ -33,6 +30,10 @@
    <path>Aircraft/F-117/F-117-submodels.xml</path>
   </submodels>
 
+  <hud>   
+   <enable3d>false</enable3d>
+  </hud>
+
   <view>
    <internal archive="y">true</internal>
     <config>
@@ -41,6 +42,42 @@
      <z-offset-m archive="y">0.2</z-offset-m>
      <pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
     </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+  
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">4.0</target-z-offset-m>
+   </config>
   </view>
 
   <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
@@ -91,7 +128,7 @@ REMEMBER: the chute can be used only once. If you want it again you must reload 
    <generic>
     <float n="0" alias="/sim/current-view/heading-offset-deg"/> 
     <float n="1" alias="/sim/current-view/pitch-offset-deg"/> 
-    <float n="2" alias="/controls/canopy/position-norm"/> 
+    <float n="2" alias="/canopy/position-norm"/> 
    </generic>
   </multiplay>
 
@@ -106,6 +143,12 @@ REMEMBER: the chute can be used only once. If you want it again you must reload 
     </menu>
    </default>
   </menubar>
+ 
+  <systems>
+   <autopilot>
+    <path>Aircraft/F-117/F-117-autopilot.xml</path>
+   </autopilot>
+  </systems>
 
  </sim>
 
@@ -146,15 +189,15 @@ REMEMBER: the chute can be used only once. If you want it again you must reload 
     </binding>
    </key>
 
-   <key n="74">
-    <name>J</name>
-    <desc>Release Red Beard</desc>
-    <binding n="0">
-     <command>property-assign</command>
-     <property>/ai/submodels/red-beard-released</property>
-     <value type="bool">true</value>
-    </binding>
-   </key>
+      <key n="74">
+        <name>J</name>
+        <desc>Release Red Beard</desc>
+        <binding n="0">
+          <command>property-assign</command>
+          <property>/ai/submodels/red-beard-released</property>
+          <value type="bool">true</value>
+        </binding>
+      </key>
 
    <key n="83">
     <name>S</name>
@@ -171,7 +214,7 @@ REMEMBER: the chute can be used only once. If you want it again you must reload 
     <desc>Open/close canopy</desc>
     <binding>
      <command>nasal</command>
-     <script>f117.canopy.toggle()</script>
+     <script>canopy.canopy_switch(2)</script>
     </binding>
    </key>
 
@@ -180,7 +223,7 @@ REMEMBER: the chute can be used only once. If you want it again you must reload 
     <desc>Open/close baydoors</desc>
     <binding>
      <command>nasal</command>
-     <script>f117.baydoors.toggle()</script>
+     <script>baydoors.baydoors_switch(2)</script>
     </binding>
    </key>
 
@@ -213,11 +256,17 @@ REMEMBER: the chute can be used only once. If you want it again you must reload 
  </limits>
 
  <nasal>
-  <f117>
+  <canopy>
+   <file>Aircraft/F-117/Nasal/canopy.nas</file>
+  </canopy>
+  <baydoors>
+   <file>Aircraft/F-117/Nasal/baydoors.nas</file>
+  </baydoors>
+  <F-117>
+   <file>Aircraft/F-117/Nasal/lighting.nas</file>
    <file>Aircraft/Generic/limits.nas</file>
-   <file>Aircraft/F-117/Nasal/system.nas</file>
    <file>Aircraft/F-117/Nasal/weapons.nas</file>
-  </f117>
+  </F-117>
   <aar> 
    <file>Aircraft/F-117/Nasal/aar.nas</file>
   </aar>

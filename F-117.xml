@@ -89,7 +89,7 @@
    <damping_coeff unit="LBS/FT/SEC">  5512.50 </damping_coeff>
    <max_steer unit="DEG"> 50.00 </max_steer>
    <brake_group>NONE</brake_group>
-   <retractable>1</retractable>
+   <retractable>RETRACT</retractable>
  </contact>
 
   <contact type="BOGEY" name="LEFT_MAIN">
@@ -105,7 +105,7 @@
    <damping_coeff unit="LBS/FT/SEC"> 11025.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>LEFT</brake_group>
-   <retractable>1</retractable>
+   <retractable>RETRACT</retractable>
  </contact>
 
   <contact type="BOGEY" name="RIGHT_MAIN">
@@ -121,7 +121,7 @@
    <damping_coeff unit="LBS/FT/SEC"> 11025.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
-   <retractable>1</retractable>
+   <retractable>RETRACT</retractable>
  </contact>
 
   <contact type="STRUCTURE" name="LEFT_WING">
@@ -238,8 +238,8 @@
 
  </propulsion>
 
-<system file="armament"/>
 <system file="brake-chute"/>
+<system file="armament"/>
 
  <flight_control name="FCS: F-117">
 
@@ -579,15 +579,15 @@
          </product>
     </function>
 
-    <function name="aero/coefficient/CDsb">
-        <description>Drag_due_to_Chute</description>
-        <product>
-            <property>aero/qbar-psf</property>
-            <property>metrics/Sw-sqft</property>
-            <property>fcs/brake-chute-selector</property>
-            <value>0.4</value>
-        </product>
-    </function>
+            <function name="aero/coefficient/CDsb">
+                <description>Drag_due_to_Chute</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/brake-chute-selector</property>
+                    <value>0.4</value>
+                </product>
+            </function>
 
     <function name="aero/coefficient/CDbeta">
        <description>Drag_due_to_sideslip</description>

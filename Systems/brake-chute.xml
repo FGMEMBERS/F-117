@@ -3,6 +3,9 @@
 
 <system name="Brake_chute">
 
+
+  <property>fcs/chute-pos-deg</property>
+
   <channel name="Chute">
 
     <pure_gain name="Chute Cmd Norm">
@@ -30,6 +33,8 @@
       <output>/surface-positions/chute-pos-norm</output>
     </pure_gain>
 
+
+
     <switch name="Brake Chute Deploy">
       <default value="0"/>
       <test  logic="AND"
@@ -40,6 +45,8 @@
         fcs/throttle-pos-norm  lt 0.2
       </test>
     </switch>
+
+    <!-- temoin ouverture 1 fois du parachute   chute-switch-count= 1  sans retour-->
 
     <switch name="Chute Switch Count">
       <default value="0"/>
@@ -53,6 +60,8 @@
         fcs/chute-switch-count == 1
       </test>
     </switch>
+
+    <!--empeche l'usage une seconde fois  chute-switch-once=1 sans retour -->
 
     <switch name="Chute Switch Once">
       <default value="0"/>

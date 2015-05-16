@@ -4,7 +4,7 @@
 
   <submodel>
     <name>redbeard1</name>
-    <model>Aircraft/F-117/Models/Stores/MK84.xml</model>
+    <model>Aircraft/F-117/Models/MK84.xml</model>
     <trigger>ai/submodels/red-beard-released</trigger>
     <speed>0</speed>
     <repeat>false</repeat>
@@ -28,7 +28,7 @@
 
   <submodel>
     <name>redbeard2</name>
-    <model>Aircraft/F-117/Models/Stores/MK84.xml</model>
+    <model>Aircraft/F-117/Models/MK84.xml</model>
     <trigger>ai/submodels/red-beard-released</trigger>
     <speed>0</speed>
     <repeat>false</repeat>
