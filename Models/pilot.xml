@@ -4,7 +4,7 @@
 <PropertyList>
 
 	<path>pilot.ac</path>
-	<texture-path>../CheckMates/</texture-path>
+	<!--<texture-path>../CheckMates/</texture-path>-->
 
 	<animation>
 		<type>select</type>
