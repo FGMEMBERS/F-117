@@ -9,7 +9,7 @@
   <aero>F-117</aero>
   <fuel-fraction>0.50</fuel-fraction>
   <startup>    
-   <splash-texture>Aircraft/F-117/F-117-splash.rgb</splash-texture>
+   <splash-texture>Aircraft/F-117/F-117-splash.png</splash-texture>
   </startup>
 
   <model>
