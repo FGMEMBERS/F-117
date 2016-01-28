@@ -270,6 +270,9 @@ REMEMBER: the chute can be used only once. If you want it again you must reload 
   <aar> 
    <file>Aircraft/F-117/Nasal/aar.nas</file>
   </aar>
+  <damage>
+    <file>Aircraft/F-117/Nasal/damage.nas</file>
+  </damage>
  </nasal>
 
 </PropertyList>

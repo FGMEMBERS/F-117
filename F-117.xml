@@ -23,7 +23,7 @@
     gear type:     tricycle
     retractable?:  yes
     # engines:     2
-    engine type:   turboprop
+    engine type:   turbine
     engine layout: aft fuselage
     yaw damper?    yes
   Outputs:
@@ -238,7 +238,7 @@
 
  </propulsion>
 
- <system file="brake-chute"/> 	
+ <system file="brake-chute"/>         
  <system file="armament"/>
  
  <flight_control name="FCS: F-117">
@@ -421,14 +421,14 @@
     <kinematic name="Gear Control">
       <input>gear/gear-cmd-norm</input>
       <traverse>
-	<setting>
+        <setting>
           <position> 0 </position>
           <time>     0 </time>
-	</setting>
-	<setting>
+        </setting>
+        <setting>
           <position> 1 </position>
           <time>     10 </time>
-	</setting>
+        </setting>
       </traverse>
       <output>gear/gear-pos-norm</output>
     </kinematic>
