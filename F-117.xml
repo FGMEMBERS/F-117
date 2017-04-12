@@ -435,7 +435,7 @@
    </kinematic>
 
         <fcs_function name="Wheel Steering">
-          <function name="fcs/steer-pos-deg">
+          <function>
             <description>Steering command for rear trucks</description>
             <product>
               <table>

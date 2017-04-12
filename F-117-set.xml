@@ -12,6 +12,20 @@
    <cockpit type="int">1</cockpit>
    <model type="int">2</model>
   </rating>
+  <tags>
+    <tag>fighter</tag>
+    <tag>bomber</tag>
+    <tag>lockheed</tag>
+    <tag>gulfwar1</tag>
+    <tag>1980s</tag>
+    <tag>1990s</tag>
+    <tag>2000s</tag>
+    <tag>ifr</tag>
+    <tag>retractable-gear</tag>
+    <tag>hud</tag>
+    <tag>jet</tag>
+    <tag>twin-engine</tag>
+  </tags>
   
   <flight-model>jsb</flight-model>
   <aero>F-117</aero>
